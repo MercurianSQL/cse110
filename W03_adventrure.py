@@ -5,7 +5,12 @@ with at least 3 levels of nested if statements."""
 
 # Write what you did to show creativity:  included instance of if/elif/else in addition to if/else statements. 
 # Included "random" choice code in addtion to if/else statements to account for user error.
-# Describe experience of 2 beta players
+# Describe experience of 2 beta players:
+"""
+TESTER 1: I have played this game for my wife
+TESTER 2: Pretty ok 7/10, Her older child
+TESTER 3: Hi I played alice in pokeland because mom asked me too.
+"""
 
 import random
 
