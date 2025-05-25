@@ -1,0 +1,480 @@
+"""
+Author: Marinda Keller
+Purpose: Code an adventure game 
+with at least 3 levels of nested if statements."""
+
+# Write what you did to show creativity:  included instance of if/elif/else in addition to if/else statements. 
+# Included "random" choice code in addtion to if/else statements to account for user error.
+# Describe experience of 2 beta players
+
+import random
+
+# Intro
+print()
+print()
+print("...")
+print ("sound effect: eye blinks")
+print("'Good morning, ALICE!' says your tutor. 'It's time to get up...")
+print("'Your mother asked to see you this morning. Please meet her in the breakfast room.'")
+print()
+print("...")
+print("You walk down the stairs in your pajamas.")
+print ("sound effect: creaking stairs")
+print("'Good morning, ALICE!' says your mother. 'I have a suprise for you...'")
+print("Your MOTHER shows you three gift boxes, each a different color.")
+print("'Choose a gift, ALICE.'")
+print()
+
+gift = ""
+gift = input("Which gift do you choose? AZURE, EMERALD, or SCARLET? ")
+gift = gift.upper()
+# print (f"{gift}")
+#passed 
+#Choice level 1: 3 options
+if gift != "AZURE" and gift != "EMERALD" and gift != "SCARLET":
+    print("I don't understand, tell me again.")
+    gift = random.choice(["AZURE", "EMERALD", "SCARLET"])
+    print (f"Ah, {gift}! That's what I thought.")
+gift = gift.upper()
+print()
+print("...")
+print(f"'You selected the {gift} gift, ALICE...'")
+print("'Go try it on!'")
+print("...")
+print("sound effect: paper crinkles")
+print(f"Your {gift} gift is an outfit in {gift}.")
+print("You go to show your mother.")
+print("...")
+print("sound effect: running feet")
+print(f"Mother says,'{gift} looks great on you, ALICE!...")
+print("'I've left something special in your pocket. Pull it out when you need it...")
+print("'Now it's time for your lessons. Go find your tutor.'")
+print("You go to find your tutor.")
+print("...")
+print("sound effect: door opens and shuts")
+#passed
+#cheshire cat == meowth
+#gift = "AZURE" use for testing
+going = "" # choice level 2, 2 options: Answer or Ignore. ANSWER storylines complete.  
+grateful = "" # Choice level 3, 2 options, both storylines complete
+berry = "" # Choice level 4, 2 options, storylines complete
+if gift == "AZURE":
+# start repeat story from here
+    print("The day is perfect outside. Partly cloudy, not too hot and not too cold.")
+    print("You are distracted by a wild MEOWTH.")
+    print("MEOWTH speaks to you. 'Where do you want to go?'")
+    going = input("You are suspicious of a talking cat. You decide to: ANSWER or IGNORE    ").upper() 
+    print("...")
+    print()
+    #option 1 = AZURE, level 2 GOING
+    if going == "ANSWER": #option 1 {gift}AZURE, level 2{going} option 1 {ANSWER}, --level 3
+        print("You say, 'I'm looking for my tutor.'")
+        print ("The wild MEOWTH looks at you, puzzled.")
+        print ("'Yes, I think you should.' says MEOWTH. 'You should read more classics. Or at least their Wikipedia page.'")
+        print ("'What is a Wikipedia?' you ask.")
+        print ()
+        print ("MEOWTH sighs.")
+        print("The wild MEOWTH attacks!")
+        print("You think, 'that escalated quickly.'")
+        print("The wild MEOWTH looks dangerous. You remember to check your pocket!")
+        print(f"You open the {gift} cube that was in your pocket. A FROAKIE appears!")
+        print()
+        print ("sound effect: bouncing spring and 'Frooak-ie'")
+        grateful = input("Do you like your FROAKIE? Y or N    ").upper()
+        print("...")
+        print()
+        if grateful == "Y": 
+# option 1 AZURE, level 2 option 1 going-ANSWER, level 3 option 1 = Grateful-Y      WINNER
+            print ("A FRAOKIE! Surely you will be safe now." )
+            print ("'A FROAKIE!' cries the wild MEOWTH, 'Oh no! That will attract...'")
+            print()
+            print ("Two humans with the letter R on their tops jump into the scene.")
+            print ("A feminine voice says, 'Prepare for trouble!'")
+            print ("A masculine voice says, 'Make that a double!!'")
+            print ("'I'm Jessie-' announces the first speaker.")  
+            print ("'I'm James!' declares the second.") 
+            print ("'We're TEAM ROCKET! Prepare to fight!' They say in unison.")
+            print ("MEOWTH rolls his eyes and says. 'That's right.'")
+            print()
+            print ("You look at FROAKIE. FROAKIE looks at his hand. He is holding a BERRY.")
+            print ("The FROAKIE looks back at you. You shrug and nod.")
+            print()
+            print ("FROAKIE throws the BERRY at TEAM ROCKET and MEOWTH.")
+            print ("There is a small explosion. Plumes of sweet smoke fill the air.")
+            print ("'A smoke BERRY,' you realize. You raise your arm to your nose and mouth to breathe through your sleeve.")
+            print()
+            print ("MEOWTH cries, 'Why does this [cough] always happen around you two! [cough]'")
+            print ("As you and FROAKIE escape toward home you hear two voices saying:'TEAM ROCKET is blasting off again!'")
+            print ("The wild MEOWTH responds,'Rot here [cough] you overhyped henchmen.'")
+            print ("You get away safely.")
+            print ("...")
+            print()
+            print ("sound effect: a solf rain falls on tree leaves")
+            print ("You are waking up. You slowly open your eyes.")
+            print ("Your tutor is reading to you and gently petting your hair.")
+            print ("'I just had the strangest dream,' you say.")
+            print ("'You can tell me all about it when we get inside, ALICE.' says your tutor.")
+            print ("As you prepare to stand up, you look down and cuddled in your arms is a big-eyed FROAKIE, smiling at you.")
+            print ("'Maybe it was no dream after all!' you say.")
+            print ("...")
+            print()
+            print ("The END")
+            print ("...")
+            print()
+            print ("Congratulations! Your adventure was a success!")
+            print()
+            print()
+            ###
+        else: 
+            #option 1=AZURE, level 2 option 1=ANSWER, level 3 option 2 = Grateful N, includes level 4 BERRY
+            print("You notice FROAKIE is holding a BERRY!")
+            berry = input("Do you like your BERRY? Y or N    ").upper()
+            if berry == "Y":
+                print("You yank the BERRY away from the FROAKIE and gobble it down.")
+                print("You start to feel stronger...")
+                print ("Then you feel dizzy. Then you faint!")
+                print ("You wake up with a bad taste in your mouth.")
+                print ("...")
+                print ("END")
+                print ()
+                print ()
+                ###
+            else:
+                print("'Oh, yuck!' you say, 'Now what do I do?'")
+                print ("MEOWTH walks over and whispers to FROAKIE. FROAKIE looks at MEOWTH and nods.")
+                print ("FROAKIE and MEOWTH run off together, far away from you.")
+                print ("You feel dizzy. Then you faint!")
+                print ("You wake up with a bad taste in your mouth.")
+                print ("...")
+                print ("END")
+                print ()
+                print ()
+                ###
+    else: #option 1 AZURE, level 2 option 2 going=IGNORE option 3 POTION
+        going = "IGNORE"
+        print(f"You {going} the wild MEOWTH and try to walk around him.")
+        print("If you don't know where you are going, ALICE, any road will get you there.'")
+        print("The wild MEOWTH attacks!")
+        print("You notice FROAKIE is holding a POTION!")
+        potion = input("Do you like your POTION? Y or N    ").upper()
+        print ("...")
+        print()
+        if potion == "Y":
+            print("You yank the POTION away from the FROAKIE and drink it down.")
+            print("You start to feel sick...")
+            print ("Then you feel dizzy. Then you faint!")
+            print ("You wake up with a bad taste in your mouth.")
+            print ("...")
+            print ("END")
+            print ()
+            print ()
+            ###
+        else:
+            print("'FROAKIE, run!' you yell.")
+            print ("You run without looking back. Hopefully that MEOWTH will track the FROAKIE, not you.")
+            print ("You run until you can barely breathe. You stop to catch your breath.")
+            print ("You feel dizzy. Then you faint!")
+            print ("You wake up with a bad taste in your mouth.")
+            print ("...")
+            print ("END")
+            print ()
+            print ()
+            ###
+# Line 2: Emerald - grass
+#   Choice 2: Encounter a character
+#   plant: White Rabbit: Minun/Plusle ; (s water),
+# white rabit
+# Option level 1.2:
+# gift = "EMERALD" use for testing code
+follow = ""
+# if gift== "AZURE":
+#    print ("remove this testing code")
+if gift == "EMERALD":
+    print("It is a bright sunny day today.")
+    print("You are distracted by a white rabbit in the distance.")
+    follow = input("Do you follow the white rabbit? Y or N "    ).upper()
+    if follow == "Y":
+        print("You race ahead to follow the white rabbit.")
+        print("...")
+        print()
+    elif follow == "N":
+        print("Who cares about some dumb rabbit.")
+        print("...")
+        print()
+    else: 
+        print ("You flip a coin.")
+        follow = random.choice(["Y", "N"])
+        if follow == "Y":
+            print("Heads! You race ahead to follow the white rabbit.")
+            print("...")
+            print()
+        else:
+            follow == "N"
+            print("Tails. Who cares about some dumb rabbit.")
+            print("...")
+            print()
+    #plusle and minun
+    pokemon = ""
+    fight_flight = ""
+    pocket = ""
+    print("sound effect: rustle in bushes")
+    if follow == "Y":
+        pokemon = "PLUSLE"
+        print(f"Suddenly, a wild {pokemon} appears in your path!")
+        print(f"The wild {pokemon} looks dangerous.") 
+        pocket = input("Do you remember to check your pocket? Y /N    ").upper()
+        if pocket == "Y":
+            print(f"You open the {gift} cube that was in your pocket. A CHESPIN appears")
+            print()
+            print ("sound effect: bouncing spring and 'Cheh-spin'")
+            print (f"The wild {pokemon} looks scared. It looks to the left and to the right.")
+            print (f"The wild {pokemon} runs away!")
+            print ("'Cool,' you say. You turn to walk home.")
+            print ("You turn around.")
+            print ("'Well, come along, CHESPIN.' you say.")
+            print ("CHESPIN ignores you and walks into the woods.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+        else:    
+            print ("You are paralized by fear!")
+            print ("You forget to breathe. You feel dizzy. You faint.")
+            print ("You wake up with a bad taste in your mouth.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+        ### Complete end! Count choices: 1)gift 2)follow, 3)fight-flight
+        if fight_flight == "RUN":
+            print ("You cannot get away!")
+            print (f"Seeing your fear, a wild MINUN joins the {pokemon}.")
+            print("The wild POKEMON look dangerous. You remember to check your pocket!")
+            print(f"You open the {gift} cube that was in your pocket. A CHESPIN appears")
+            print()
+            print ("sound effect: bouncing spring and 'Cheh-spin'")
+            print ("You look to CHESPIN.")
+            print ("'CHESPIN, can you use OVERGROW?' you ask.")
+            print ("CHESPIN shakes his head, no.")
+            print ("'Maybe we can hide?' you ask.")
+            print ("CHESPIN nods emphatically.")
+            print ("CHESPIN slams his tiny fist branches into the ground.")
+            print ("Roots burst from the ground surrounding CHESPIN in an impenetrable plant coocoon.")
+            print ("The remaining pokemon join hands. Electric lightning arcs through the sky!")
+            print ("You feel dizzy. Then you faint!")
+            print ("You wake up with a bad taste in your mouth.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+    else:
+        pokemon = "MINUN"
+        print(f"Suddenly, a wild {pokemon} appears in your path!")
+        fight_flight = input("Do you stand your ground or run away? STAY or RUN    ").upper()
+        print("...")
+        print()
+        if fight_flight != "STAY" and fight_flight != "RUN":
+        #plusle and minun
+            print ("You flip a coin.")
+            print (f"The wild {pokemon} steals your coin and runs away.")
+            print ("You feel dizzy. Then you faint!")
+            print ("You wake up with a bad taste in your mouth.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+                ### Complete end! Count choices: 1)gift 2)follow, 3)fight-flight
+        elif fight_flight == "STAY":
+            print(f"The wild {pokemon} looks dangerous. You remember to check your pocket!")
+            print(f"You open the {gift} cube that was in your pocket. A CHESPIN appears")
+            print()
+            print ("sound effect: bouncing spring and 'Cheh-spin'")
+            print (f"The wild {pokemon} looks scared. It looks to the left and to the right.")
+            print (f"The wild {pokemon} runs away!")
+            print ("'Cool,' you say. You turn to walk home.")
+            print ("You turn around.")
+            print ("'Well, come along, CHESPIN.' you say.")
+            print ("CHESPIN scrambles to catch up.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+        ### Complete end! Count choices: 1)gift 2)follow, 3)fight-flight
+        else:
+            fight_flight == "RUN"
+            print ("You cannot get away!")
+            print (f"Seeing your fear, a wild PLUSLE joins the {pokemon}.")
+            print("The wild POKEMON look dangerous. You remember to check your pocket!")
+            print(f"You open the {gift} cube that was in your pocket. A CHESPIN appears")
+            print()
+            print ("sound effect: bouncing spring and 'Cheh-spin'")
+            print ("You look to CHESPIN.")
+            print ("'CHESPIN, can you use OVERGROW?' you ask.")
+            print ("CHESPIN nods, concentrates very hard, and dozens of vines entwine both POKEMON!")
+            print ("'Solid work CHESPIN!' you cheer. 'Wa-hoo! Lets you and me get out of here!'")
+            print ("You reach for CHESPIN and you both escape toward your home.")
+            print ("You get away safely.")
+            print ("...")
+            print()
+            print ("sound effect: birds chiriping in tree leaves")
+            print ("You are waking up. You slowly open your eyes.")
+            print ("Your tutor is reading to you and gently petting your hair.")
+            print ("'I just had the strangest dream,' you say.")
+            print ("'You can tell me all about it when we get inside, ALICE.' says your tutor.")
+            print ("As you prepare to stand up, you look down and tightly clinging to your arm is CHESPIN, smiling at you.")
+            print ("'Maybe it was no dream after all!' you say.")
+            print ("...")
+            print()
+            print ("The END")
+            print ("...")
+            print()
+            print ("Congratulations! Your adventure was a success!")
+            print()
+            print()
+        ### Complete end! Count choices: 1)gift 2)follow, 3)fight-flight
+        ###
+
+# Option level 1.3:
+# gift = "SCARLET" use for testing code
+sing = ""
+sauce = ""
+teacup = ""
+# if gift != "SCARLET": [use for troubleshooting]
+    #print ("remove this testing code")
+if gift == "SCARLET":
+# Line 3: Scarlet - fire
+#   Choice 2: Encounter a character
+#   fire: Dedenne (s water) and Mr Rime (w fire) or Mr mime (no s or w)
+    print("It is a bright and sunny day today.")
+    print ("You hear music in the distance.")
+    sing = input("Do you find your tutor or go toward the song? TUTOR or SONG    ").upper()
+    print ("...")
+    if sing != "TUTOR" and sing != "SONG":
+        print("You should practice your typing skills with your TUTOR!")
+        sing = "TUTOR"
+    elif sing == "TUTOR":
+        print ("A wild DEDENNE stumbles across your path. Is it sick?")
+        sauce = input("Is the wild DEDENNE sick? Y or N    ").upper()
+        print("...")
+        print()
+        if sauce == "Y":
+            print ("You remember to check your pocket!")
+            print(f"You open the {gift} cube that was in your pocket. A FENNEKIN appears!")
+            print()
+            print ("sound effect: bouncing spring and 'Fen-e-kin'")
+            print ("You and DEDENNE look at FENNEKIN.")
+            print ("FENNEKIN watches DEDENNE.")
+            print ("FENNEKIN walks over to DEDENNE.")
+            print ("DEDENNE offers FENNEKIN wrapped CANDY.")
+            print ("The CANDY is labeled 'Eat me'.")
+            print ("DEDENNE unwraps the CANDY and offers it again to FENNEKIN.")
+            print ("FENNEKIN takes a lick.")
+            print ("Suddenly, FENNEKIN grows HUGE!")
+            print ("The wild DEDENNE faints.")
+            print ("You and FENNEKIN look at each other.")
+            print ("'How am I supposed to get you home now?' you ask.")
+            print ("'Well, come on' you say to FENNEKIN. You turn to walk home.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+        else:
+            sauce == "N"
+            print ("You carefully approach the stumbling DEDENNE.")
+            print ("'Do you need help?' you ask.")
+            print ("DEDENNE hands you a sweet confection.")
+            print ("The confection is labeled 'Eat me'.")
+            print ("You unwrap the confection and sniff it.")
+            print ("It smells sweet! You try a nibble.")
+            print ("Suddenly, you grow taller! Taller and taller and taller!")
+            print ("Your head reaches the clouds and you keep growing!")
+            print ("The air gets thinner. You keep growing!")
+            print ("You feel dizzy. Then you faint!")
+            print ("You wake up with a bad taste in your mouth.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+
+    else: 
+        sing = "SONG"
+        print ("You follow the music.")
+        print ("In a clearing, you see a funny little man tap-dancing to the tune.")
+        print ("No, not a man. A POKEMON! He is MR. RIME.")
+        print ("MR. RIME taps over to you and hands you a teacup.")
+        teacup = input("Do you accept the teacup? Y / N    ").upper()
+        print("...")
+        if teacup == "Y":
+            print ("You accept the teacup.")
+            print ("The teacup is labeld 'Drink Me'.")
+            print ("You swallow the liquid down in one gulp.")
+            print ("Suddenly, you feel unwell. Everyone and everything is growing taller!")
+            print ("Or are you shrinking?")
+            print ("You are looking a grasshopper in the eye when MR. RIME taps over to where you stand.")
+            print ("You feel a tremendous weight. Then you faint!")
+            print ("You wake up with a bad taste in your mouth.")
+            print("...") #this end is fomatted correctly
+            print ("END")
+            print()
+            print()
+        else: # teacup N
+            print ("'No, thank you,' you insist, pushing away the teacup.")
+            print ("MR. RIME offers you the teacup again.")
+            print ("You remember to check your pocket!")
+            print ("'Really, no thank you,' you insist.")
+            print (f"You pull out a {gift} cube that was in your pocket.")
+            print ("'See,' you say, 'I brought my own.")
+            print(f"You open the {gift} cube that was in your pocket. A FENNEKIN appears!")
+            print()
+            print ("sound effect: bouncing spring and 'Fen-eh-kin'")
+            print ("FENNEKIN takes one look at MR. RIME and scorches the ice cane he carries.")
+            print ("MR. RIME stomps his foot in the puddle that was his cane.")
+            print ("MR. MIME dramatically spins 180-degrees and marches away.")
+            print ("'Well!' you exclaim. Thank you FENNEKIN. He seemed nefarious to me, too.")
+            print ("The two of you dance to the music in the clearing.")
+            print ("...")
+            print()
+            print ("sound effect: birds singing outside your window")
+            print ("You wake up and take a deep breath without opening your eyes. ")
+            print ("'Good morning, ALICE!' says your tutor. 'It's time to get up...")
+            print ("'I just had the strangest dream,' you say.")
+            print ("'You can tell me all about it after breakfast, ALICE.' says your tutor.")
+            print ("You slowly open your eyes and look down. FENNEKIN is snuggled tightly into your belly.")
+            print ("'Maybe it was no dream after all!' you say.")
+            print ("...")
+            print()
+            print ("The END")
+            print ("...")
+            print()
+            print ("Congratulations! Your adventure was a success!")
+            print()
+            print()
+print("Thank you for playing ALICE IN POKELAND!")
+print("Leave your feedback in the code below, or email it to sistermarinda -at- gmail")
+
+
+"""
+Insert your comments here!:
+
+"""
+
+"""
+LEGAL stuff:
+This code is a work of parody classified as a mash-up, choose your own adventure, fiction. 
+It draws from culturally well-known characters and themes from: 
+Lewis Carrol's classic "Alice in Wonderland", 
+whose intellectual property exists in the Public Domain, 
+and 
+The Pokemon Company's Pokemon franchise,
+whose intellectual property is jointly owned by Nintendo, Game Freak, and Creatures Inc.
+The author of this code claims no ownership of any intellectual property dramatized in or created by this code.
+The author is not a representitive of, nor represented by Nintendo, Game Freak, and/or Creatures Inc.
+Argument for FAIR USE: 
+This is a work of PARODY.
+Additionally, it was created entirely for SCHOLARLY use by the author 
+as a class assignment to practice coding if, elif, else scenerios.
+Finally, the completed storyline, as released in total or in part, is a form of ARTISTIC EXPRESSION. 
+The author expresses her gratitude to the creators of the Pokemon franchise 
+whose own artistic expressions have provided oportunities for herself and her community to 
+bond and connect over their shared culture of pokemon.
+"""
