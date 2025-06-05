@@ -16,8 +16,8 @@ print(sw_len)
 if guess != secret_word:
     print("Your hint is:", end="")
     for i in secret_word:
-        print("_ ", end="")
-print()
+        print("_ ", end= "")
+        print()
 guess = input("What is your guess? ").lower()
 count = count + 1
 if guess == secret_word:
