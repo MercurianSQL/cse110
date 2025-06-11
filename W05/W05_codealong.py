@@ -31,6 +31,7 @@ if entry == 0:
             largest = entry
     print(f"The largest is {largest}")
 
+#    instructor used: if number > 0 and number < smallest_so_far:
     for entry in numbers_listo:
         if entry > 0 and smallest != 1:
             smallest = entry
@@ -38,3 +39,10 @@ if entry == 0:
             smallest == 1
     print(f"The smallest positive number is: {smallest}")
 
+"""
+# Sorting the list
+sorted_list = sorted(numbers)
+print("The sorted list is:")
+for number in sorted_list:
+    print(number)
+"""

@@ -40,7 +40,7 @@ shopping_list[index] = new_item
 print("\nThe shopping list with indexes is:")
 for i in range(len(shopping_list)):
     item = shopping_list[i]
-    print(f"{i}. {item}")"""
+    print(f"{i}. {item}")
 
 my_list = [-20, -2, 4, -6, 8, 2, 19, 0, -9]
 smallest = 0
@@ -48,3 +48,8 @@ for value in my_list:
     if value < smallest:
         smallest = value
 print(f"The smallest is {smallest}")
+"""
+
+numbers = [1, 2, 3]
+for animal in numbers:
+    print(animal)
