@@ -3,15 +3,65 @@ Author: Marinda Keller
 Purpose: to anaylize data using db files
 """
 
-# with open("life-expectancy.csv") as life_expect_file:
-with open("W06/life-expectancy.csv") as life_expect_file: # for my system use
-    next(life_expect_file)
-    for 
 
+# Format
+# Entity,Code,Year,Life expectancy (years)
+# Afghanistan,AFG,1950,27.638
+entity = ""
+code = ""
+year = 0
+year = int(year)
+life = 0.0
+life = float(life)
+lowest_life_expect = 100000.0
+lowest_life_expect = float(lowest_life_expect)
+highest_life_expect = 0.0
+highest_life_expect = float(highest_life_expect)
+
+with open("life-expectancy.csv") as life_expect_file: # Milestone 2
+# with open("W06/life-expectancy.csv") as life_expect_file: # for my system use
+    next(life_expect_file) 
+    for line in life_expect_file:
+                
+        #Parsing Strings
+        clean_line = line.strip()
+#        print(clean_line) # Milestone 3:
+
+        #Splitting a string into pieces   
+        parts = clean_line.split(",")
+        entity = parts[0].title()
+        code = parts[1].upper()
+        year = int(parts[2])
+        life = float(parts[3]) 
+#        print(f"{entity}, {code}, {year}, {life}") # Milestone 4:
+        
+        #Find lowest
+        if life < lowest_life_expect:
+            lowest_life_expect = life
+            #print (f"The lowest life expectancy so far is {lowest_life_expect}.")
+        if life > highest_life_expect:
+            highest_life_expect = life
+            #print (f"The highest life expectancy so far is {highest_life_expect}.")
+
+    print(f"The lowest life expectancy ever was {lowest_life_expect} years.") # Milestone 5
+    print (f"The highest life expectancy ever was {highest_life_expect} years.")
+        #4)Keep track of the name of the person that is the youngest.
+        #lowest_entity = entity
+
+
+# Milestone Requirements:
+# [x] Milestone 1: Download the dataset
+# [x] Milestone 2: Load the dataset in your Python program
+# [x] Milestone 3: Iterate through the data line by line  ## RESTART HERE!
+# [x] Milestone 4: Split each line into parts
+# [x] Milestone 5: Find the LOWEST value for life expectancy and the HIGHEST value for life expectancy in the dataset, and DISPLAY both values. 
+# (Note that at this point, you just need the value for this, not the year and the country for that value.)
+#
+#  1)What is the year and country that has the lowest life expectancy in the dataset?
 # Entity,Code,Year,Life expectancy (years)
 # Afghanistan,AFG,1950,27.638
 
-# 1)What is the year and country that has the lowest life expectancy in the dataset?
+
 # 2)What is the year and country that has the highest life expectancy in the dataset?
 # 3)Allow the user to type in a year, then, find the average life expectancy for that year. Then find the country with the minimum and the one with the maximum life expectancies for that year.
 
